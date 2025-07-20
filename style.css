@@ -1,0 +1,278 @@
+:root {
+    --bg-dark: #0a0a0a;
+    --primary-color: #001021;
+    --secondary-color: #D4AF37;
+    --accent-color: #6CACE4;
+    --text-light: #EAEAEA;
+    --text-dark: #1A1A1A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+}
+h1, h2, h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--secondary-color);
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('https://st4.depositphotos.com/21607914/23442/i/600/depositphotos_234420106-stock-photo-argentina-fans-display-national-flag.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: kenburns 20s ease-out infinite;
+    z-index: 1;
+}
+@keyframes kenburns {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero-content h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(4rem, 15vw, 12rem);
+    color: var(--text-light);
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease-out;
+}
+.scroll-down-indicator {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+}
+.scroll-down-indicator span {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+    40% { transform: translate(-50%, -15px); }
+    60% { transform: translate(-50%, -7px); }
+}
+
+
+.interactive-section-wrapper {
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-dark);
+    padding: 5vh 0;
+}
+.left-panel {
+    width: 50%;
+    height: 90vh;
+    position: sticky;
+    top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sticker-canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+.sticker-image {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1s cubic-bezier(0.23, 1, 0.320, 1);
+    border: 5px solid white;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+    will-change: transform;
+}
+.right-panel { 
+    width: 50%; 
+    padding: 0 5%; 
+}
+.sticky-text-content {
+    height: 90vh; 
+    position: sticky;
+    top: 5vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    color: var(--text-light);
+}
+.sticky-text-content h2 { 
+    font-size: 4rem; 
+    margin-bottom: 2rem; 
+    color: var(--accent-color); 
+}
+.scroll-spacer {
+    height: 220vh; 
+}
+.typewriter-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+.typewriter-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--secondary-color);
+}
+@keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
+
+
+.horizontal-scroll-section {
+    position: relative;
+    height: 300vh;
+    background-color: #111;
+}
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.horizontal-content {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    will-change: transform;
+}
+.gallery-card {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.card-content { position: relative; text-align: center; max-width: 600px; }
+.card-content h3 { font-size: 5rem; }
+.card-content p { font-size: 1.2rem; margin-top: 1rem; }
+
+
+.milestones-section {
+    padding: 10rem 5%;
+    background-color: var(--bg-dark);
+    text-align: center;
+}
+.milestones-section h2 {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+}
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.milestone {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.milestone.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+.milestone .stat-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 7rem;
+    color: var(--accent-color);
+    line-height: 1;
+}
+.milestone .stat-label {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.final-section {
+    height: 200vh; 
+    position: relative;
+}
+.final-section-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+.final-image-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://st5.depositphotos.com/4782585/69387/i/600/depositphotos_693873370-stock-photo-doha-qatar-december-2022-football.jpg');
+    background-size: cover;
+    background-position: center;
+    clip-path: circle(0% at center);
+    will-change: clip-path;
+}
+.final-content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    will-change: opacity;
+}
+.final-content h2 { 
+    font-size: clamp(4rem, 10vw, 8rem); 
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+footer { text-align: center; padding: 2rem; background: var(--text-dark); }
+
+@media (max-width: 768px) {
+    .interactive-section-wrapper { flex-direction: column; }
+    .left-panel, .right-panel { width: 100%; position: relative; top: auto; height: auto; }
+    .left-panel { height: 60vh; }
+}

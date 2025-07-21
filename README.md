@@ -1,17 +1,21 @@
-Lionel Messi: A Hyper-Interactive Scroll-Tale
+# Lionel Messi: An Interactive Web Experience
 
-This is a passion project I built to tell the story of Lionel Messi's incredible career. I wanted to go beyond a static webpage and create something more engaging and memorable. The result is a single-page site that uses a variety of scroll-based animations to bring his journey to life.
+A single-page application showcasing advanced front-end animation techniques through an interactive narrative of Lionel Messi's career.
 
+---
 
-# What I Built
+### Project Overview
 
-I focused on creating a fluid, cinematic experience. As you scroll through the page, you'll see:
+This project was developed to demonstrate a command of modern, performant front-end technologies without relying on external libraries or frameworks. The goal was to create a dynamic, visually-driven user experience centered around scroll-based event handling and advanced CSS.
 
-* **Dynamic Animations:** I used `IntersectionObserver` to make sure animations trigger smoothly and efficiently right when they come into view.
-* **Engaging Parallax Effects:** The page reacts to your scroll position and even your mouse movement, adding a sense of depth and interactivity.
-* **A Unique Horizontal Gallery:** I wrote a custom script that transforms the normal vertical scroll into a horizontal one for the photo gallery section. It was a fun challenge!
-* **Smooth Performance:** To keep everything running without any stutter, all the animations are powered by `requestAnimationFrame`, which is the browser-friendly way to handle this kind of thing.
-* **A Fully Responsive Layout:** I designed it from the ground up to look and feel great, whether you're on a phone, a tablet, or a desktop computer.
+### Technical Breakdown
+
+* **Scroll-Triggered Animations:** I used the `IntersectionObserver` API to efficiently trigger animations only when elements enter the viewport, optimizing performance.
+* **Parallax & Mouse Tracking:** The site implements both scroll-based parallax and mouse-tracking listeners to create a sense of depth and interactivity.
+* **Horizontal Scroll Section:** I wrote a custom JavaScript solution that hijacks vertical scroll events within a specific container to drive horizontal content movement.
+* **Performant Rendering:** All animations are tied to the browser's rendering cycle using `requestAnimationFrame` to ensure a smooth, jank-free experience.
+* **Responsive Architecture:** Built with a mobile-first approach using modern CSS features like Flexbox and Grid for a consistent layout across all screen sizes.
+
 
 ---
 

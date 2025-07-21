@@ -154,5 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     smoothType();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    handleScroll(); 
 });
